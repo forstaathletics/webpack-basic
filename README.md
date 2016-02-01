@@ -1,9 +1,6 @@
-# webpack-basic
-A short and sweet webpack intro
+# A basic React site with Webpack
 
-Each section of progress is on it's own branch.
-
-## Sections / Branches
-
-* [Master](https://github.com/forstaathletics/webpack-basic) The end result
-* [One, a minimal site with webpack.](https://github.com/forstaathletics/webpack-basic/tree/one-get-started)
+* Use Webpack config directory with three config files
+    * common.config.js
+    * dev.config.js
+    * prod.config.js
