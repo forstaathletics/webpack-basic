@@ -22,7 +22,7 @@ module.exports = Object.assign(commonConfig, {
     loaders: commonConfig.module.loaders.concat([
       {
         test: /\.js|\.jsx$/,
-        loaders: ['react-hot', 'babel-loader'],git@github.com:forstaathletics/webpack-basic.git
+        loaders: ['react-hot', 'babel-loader'],
         exclude: /node_modules/
       }
     ])

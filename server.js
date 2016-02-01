@@ -7,7 +7,8 @@ var express = require('express')
 var app = express()
 
 var root_path = path.join(__dirname, 'build')
-var static_path = root_path
+var static_path = path.join(root_path, 'static')
+var indexPath = 'index.html'
 var isDevelopment = (process.env.NODE_ENV !== 'production')
 // Default port is 8080 but can be overriden with the environmental variable PORT.
 // This works in Heroku for automated port selection
@@ -19,6 +20,8 @@ if (isDevelopment) {
   var WebpackConfig = require('./webpack/dev.config')
   var compiler = webpack(WebpackConfig)
   var webpackDevMiddleware = require('webpack-dev-middleware')
+  root_path = path.join(__dirname, 'dist')
+  static_path = path.join(root_path, 'static')
 
   // Logging middleware
   app.use(require('morgan')('short'))
@@ -42,8 +45,11 @@ if (isDevelopment) {
   console.log('Production Server!')
 }
 
-// Treat everything as static for this simple site.
-app.use('/', express.static(static_path))
+app.use('/static', express.static(static_path))
+
+app.get('*', function rootAnything (req, res) {
+  res.sendFile(indexPath, {root: root_path})
+})
 
 // Create our express/node server and start it.
 var server = app.listen(port, function onListen (err) {
