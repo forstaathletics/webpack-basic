@@ -1,5 +1,9 @@
-# A very basic React site with Webpack - Seven
+# webpack-basic
+A short and sweet webpack intro
 
-Heroku deployment is easy, of course. We've added a simple Procfile on this branch and a `postinstall` npm script to complete the build.
-Heroku will run the install and build automagically, then start the production server. Simple push
-this to a Heroku app and it's deployed!
+Each section of progress is on it's own branch.
+
+## Sections / Branches
+
+* [Master](https://github.com/forstaathletics/webpack-basic) The end result
+* [One, a minimal site with webpack.](https://github.com/forstaathletics/webpack-basic/tree/one-get-started)
