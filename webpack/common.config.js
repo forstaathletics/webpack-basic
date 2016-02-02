@@ -9,8 +9,8 @@ module.exports = {
 
   resolve: {
     root: [path.join(__dirname, 'node_modules'), path.join(__dirname, 'src')],
+    extensions: ['', '.jsx', '.js', '.json', '.css'],
     modulesDirectories: ['node_modules', 'src']
-    // extensions: ['', '.jsx', '.js', '.json', '.css'],
   },
 
   plugins: [],

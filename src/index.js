@@ -13,10 +13,10 @@ addMiddleware(syncHistory(browserHistory))
 const store = makeStore({'page': Map({'header': Map({'title': 'Forsta - Basic Webpack'})})})
 
 var routes = (
-    <Route component={App} path='/'>
-      <Route component={AboutPage} path='/about' />
-      <Route component={ContactPage} path='/contact' />
-    </Route>
+  <Route component={App} path='/'>
+    <Route component={AboutPage} path='/about' />
+    <Route component={ContactPage} path='/contact' />
+  </Route>
 )
 
 ReactDOM.render(
