@@ -12,6 +12,13 @@ module.exports = Object.assign(commonConfig, {
       'process.env': {
         NODE_ENV: '"production"'
       }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      },
+      mangle: true,
+      minimize: true
     })
   ]),
 

@@ -7,6 +7,12 @@ module.exports = {
     main: path.join(__dirname, '..', 'src', 'index.js')
   },
 
+  resolve: {
+    root: [path.join(__dirname, 'node_modules'), path.join(__dirname, 'src')],
+    modulesDirectories: ['node_modules', 'src']
+    // extensions: ['', '.jsx', '.js', '.json', '.css'],
+  },
+
   plugins: [],
 
   output: {
@@ -15,8 +21,10 @@ module.exports = {
     publicPath: '/static/js/'
   },
 
-  // Empty common loader for now.
   module: {
-    loaders: []
+    loaders: [{
+      test: /\.css$/,
+      loader: 'style-loader!css-loader!postcss-loader'
+    }]
   }
 }
