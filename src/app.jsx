@@ -43,25 +43,6 @@ let MenuItemLink = React.createClass({
   }
 })
 
-// Some _very basic_ filler components
-let AboutPage = React.createClass({
-  render: () => {
-    return (<div>
-    <Link to='/'>Home</Link>
-    <h1>About</h1>
-    </div>)
-  }
-})
-
-let ContactPage = React.createClass({
-  render: () => {
-    return (<div>
-    <Link to='/'>Home</Link>
-    <h1>Contact</h1>
-    </div>)
-  }
-})
-
 // Set up a basic MDL header
 let ForstaLayout = React.createClass({
   /** Build an MDL based header with a little extra sauce
@@ -108,5 +89,3 @@ export default connect((state) => (
     'header': state.page.get('header', Map())
   }
 ))(ForstaLayout)
-
-export { AboutPage, ContactPage }

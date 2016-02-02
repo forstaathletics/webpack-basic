@@ -6,16 +6,29 @@ import { Provider } from 'react-redux'
 import { syncHistory, routeReducer } from 'react-router-redux'
 
 import makeStore, { addReducer, addMiddleware } from './store'
-import App, { AboutPage, ContactPage } from './app'
+import App from './app'
 
 addReducer('routing', routeReducer)
 addMiddleware(syncHistory(browserHistory))
 const store = makeStore({'page': Map({'header': Map({'title': 'Forsta - Basic Webpack'})})})
 
+// Use an async getCompoenent to use code splitting
 var routes = (
   <Route component={App} path='/'>
-    <Route component={AboutPage} path='/about' />
-    <Route component={ContactPage} path='/contact' />
+    <Route path='/about'
+        getComponent={(location, cb) => {
+          require.ensure([], (require) => {
+            cb(null, require('./about').default)
+          })
+        }}
+    />
+    <Route path='/contact'
+        getComponent={(location, cb) => {
+          require.ensure([], (require) => {
+            cb(null, require('./contact').default)
+          })
+        }}
+    />
   </Route>
 )
 
