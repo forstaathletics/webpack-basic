@@ -1,5 +1,4 @@
 var path = require('path')
-var webpack = require('webpack')
 
 module.exports = {
 
@@ -42,6 +41,11 @@ module.exports = {
     loaders: [{
       test: /\.css$/,
       loader: 'style-loader!css-loader!postcss-loader'
+    },
+    {
+      // Inline images smaller than 5K, otherwise got to the network
+      test: /\.(png|jpg|gif)$/,
+      loader: 'url-loader?limit=5120,name=img/img-[hash:6].[ext]'
     }]
   }
 }

@@ -46,9 +46,11 @@
     "redux-promise": "^0.5.1",
     "redux-thunk": "^1.0.3",
     "style-loader": "^0.13.0",
+    "url-loader": "^0.5.7",
     "webpack": "^1.12.12"
   },
   "devDependencies": {
+    "file-loader": "^0.8.5",
     "html-webpack-plugin": "^2.7.2",
     "morgan": "^1.6.1",
     "postcss": "^5.0.14",

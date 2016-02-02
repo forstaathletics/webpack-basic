@@ -77,7 +77,9 @@ let ForstaLayout = React.createClass({
               </HeaderRow>
             </Header>
 
-            <main className='mdl-layout__content'>{children}</main>
+            <main className='mdl-layout__content'>
+              {children}
+            </main>
           </div>
       </div>
     )
