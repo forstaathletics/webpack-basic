@@ -1,6 +1,8 @@
-# A very basic React site with Webpack - Four
+# A very basic React site with Webpack - Five
 
-Add more code splitting, chunking, using `require` with React routes. Splitting with `require` while
-building the routes allows for easy code splitting of modules that are loaded by the route when it's
-navigated to. Added the `chunkFilename` option into the Webpack entry config to add simple, dynamic, number
-based names for each chunk.
+Add usage of the HtmlWebpackPlugin to generate an `index.html` from a template. This allows us to use
+hashes in our bundle and chunk file names for cache busting. So of course, update the production
+config to use hashes in names. Also, add caching of static files, which is most files, in our
+`server.js` when in production mode. And remove our static `index.html` file in favor of a template
+at `src/index.tmpl.html`.
+
