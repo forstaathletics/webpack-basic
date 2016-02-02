@@ -1,10 +1,24 @@
 var path = require('path')
+var webpack = require('webpack')
 
 module.exports = {
 
   // Create a bundle named main.js for our entry point at `src/index.js`
+  // Create a vendor bundle that has the bulk or all of our library/dependencies
+  // in it.
   entry: {
-    main: path.join(__dirname, '..', 'src', 'index.js')
+    main: path.join(__dirname, '..', 'src', 'index.js'),
+    vendors: ['vendor/material', 'react', 'react-dom', 'react-redux',
+      'react-router', 'react-router-redux', 'react-mdl',
+      'immutable', 'redux', 'redux-thunk',
+      'redux-promise', 'redux-actions'
+    ]
+  },
+
+  output: {
+    filename: '[name].js',
+    path: path.join(__dirname, '..', 'build', 'static', 'js'),
+    publicPath: '/static/js/'
   },
 
   resolve: {
@@ -13,13 +27,9 @@ module.exports = {
     modulesDirectories: ['node_modules', 'src']
   },
 
-  plugins: [],
-
-  output: {
-    filename: '[name].js',
-    path: path.join(__dirname, '..', 'build', 'static', 'js'),
-    publicPath: '/static/js/'
-  },
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js')
+  ],
 
   module: {
     loaders: [{

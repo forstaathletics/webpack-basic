@@ -4,9 +4,6 @@ var commonConfig = require('./common.config.js')
 // Override and extend the common config for our production server/environment
 module.exports = Object.assign(commonConfig, {
 
-  // A simple entry point
-  entry: ['./src/index.js'],
-
   plugins: commonConfig.plugins.concat([
     new webpack.DefinePlugin({
       'process.env': {
