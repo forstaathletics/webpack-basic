@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node server.js",
-    "build": "webpack -p --verbose --display-modules --display-reasons --display-chunks --display-error-details --config webpack/prod.config.js",
+    "build": "webpack -p --verbose --display-modules --display-reasons --display-chunks --display-error-details --config webpack/prod.config.js && cp -fvr dist/* build/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
