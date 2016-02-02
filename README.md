@@ -4,6 +4,8 @@ A short and sweet incremental introduction to Webpack, resulting in deployment o
 #### The 7 Steps
 Each step is on its own branch. Check them out to follow along:
 
+**Note: You may need to run `npm install` with each step**
+
 * [1. A minimal React site with Webpack](https://github.com/forstaathletics/webpack-basic/tree/one-get-started)
 * [2. Add style loading & preprocessing with PostCSS](https://github.com/forstaathletics/webpack-basic/tree/two-style-loader)
 * [3. Splitting the vendor bundle from the main bundle](https://github.com/forstaathletics/webpack-basic/tree/three-vendor-bundle)
