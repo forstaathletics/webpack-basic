@@ -4,8 +4,9 @@
   "description": "A basic Webpack config in steps",
   "main": "src/index.js",
   "scripts": {
-    "start": "node server.js",
-    "build": "webpack -p --verbose --display-modules --display-reasons --display-chunks --display-error-details --config webpack/prod.config.js && cp -fvr dist/* build/",
+    "start": "if [ ! -f ./dist/index.html ]; then npm run devbuild; fi; node server.js",
+    "build": "webpack -p --verbose --display-modules --display-reasons --display-chunks --display-error-details --config webpack/prod.config.js",
+    "devbuild": "webpack --display-chunks --display-error-details --config webpack/dev.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -30,6 +31,7 @@
     "babel-preset-react": "^6.3.13",
     "babel-preset-stage-0": "^6.3.13",
     "classnames": "^2.2.3",
+    "compression": "^1.6.1",
     "css-loader": "^0.23.1",
     "express": "^4.13.4",
     "immutable": "^3.7.6",
@@ -47,6 +49,7 @@
     "webpack": "^1.12.12"
   },
   "devDependencies": {
+    "html-webpack-plugin": "^2.7.2",
     "morgan": "^1.6.1",
     "postcss": "^5.0.14",
     "postcss-cssnext": "^2.4.0",

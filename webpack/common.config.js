@@ -3,6 +3,14 @@ var webpack = require('webpack')
 
 module.exports = {
 
+  // Config for HtmlWebpackPlugin
+  indexHtml: {
+    inject: 'body',
+    hash: false,
+    favicon: 'dist/static/img/favicon.ico',
+    template: path.join('src', 'index.tmpl.html')
+  },
+
   // Create a bundle named main.js for our entry point at `src/index.js`
   // Create a vendor bundle that has the bulk or all of our library/dependencies
   // in it.
@@ -16,7 +24,7 @@ module.exports = {
   },
 
   output: {
-    filename: '[name].js',
+    filename: '[name].bundle.js',
     chunkFilename: '[id].bundle.js',
     path: path.join(__dirname, '..', 'build', 'static', 'js'),
     publicPath: '/static/js/'
@@ -28,9 +36,7 @@ module.exports = {
     modulesDirectories: ['node_modules', 'src']
   },
 
-  plugins: [
-    new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js')
-  ],
+  plugins: [],
 
   module: {
     loaders: [{

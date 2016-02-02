@@ -13,8 +13,10 @@ var isDevelopment = (process.env.NODE_ENV !== 'production')
 // Default port is 8080 but can be overriden with the environmental variable PORT.
 // This works in Heroku for automated port selection
 var port = process.env.PORT || 8080
+var staticConfig = {}
 
 if (isDevelopment) {
+  console.log('Development Server!')
   // Set up our middleware for a development server
   var webpack = require('webpack')
   var WebpackConfig = require('./webpack/dev.config')
@@ -41,11 +43,18 @@ if (isDevelopment) {
     heartbeat: 10 * 1000
   }))
 } else {
-  // Production specific stuff will go here
+  // Production specific stuff can go here
   console.log('Production Server!')
+  var compression = require('compression')
+  var oneHour = 3600000
+  var oneDay = oneHour * 24
+  var oneWeek = oneDay * 7
+
+  app.use(compression())
+  staticConfig = {maxAge: oneWeek}
 }
 
-app.use('/static', express.static(static_path))
+app.use('/static', express.static(static_path, staticConfig))
 
 app.get('*', function rootAnything (req, res) {
   res.sendFile(indexPath, {root: root_path})
