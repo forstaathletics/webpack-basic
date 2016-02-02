@@ -47,16 +47,16 @@
     "redux-thunk": "^1.0.3",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
-    "webpack": "^1.12.12"
-  },
-  "devDependencies": {
-    "file-loader": "^0.8.5",
-    "html-webpack-plugin": "^2.7.2",
-    "morgan": "^1.6.1",
     "postcss": "^5.0.14",
     "postcss-cssnext": "^2.4.0",
     "postcss-loader": "^0.8.0",
     "react-hot-loader": "^1.3.0",
+    "file-loader": "^0.8.5",
+    "html-webpack-plugin": "^2.7.2",
+    "webpack": "^1.12.12"
+  },
+  "devDependencies": {
+    "morgan": "^1.6.1",
     "webpack-dev-middleware": "^1.5.1",
     "webpack-hot-middleware": "^2.6.4"
   }
