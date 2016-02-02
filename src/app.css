@@ -6,3 +6,14 @@ main.mdl-layout__content {
   background-color: #EEE;
   padding: 2em;
 }
+
+.avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 32px;
+}
+
+
+.good-news {
+  color: #EEE;
+}
