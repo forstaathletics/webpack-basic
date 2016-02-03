@@ -1,11 +1,11 @@
-# A very basic React site with Webpack
+# Add Style Loading & Preprocessing with PostCSS
 
-On this branch we add some `css` loading and break out our React code into
-it's own `app.jsx` file.
+On this branch we add style loading with [`postcss-loader`](https://github.com/postcss/postcss-loader), which provides [several plugins](https://github.com/postcss/postcss#plugins) that aid in the development process.
 
-We also bring the Material Design Lite assets into the `src` tree and bundle them into
-our `main.js` instead of hardcoding them into `index.html`
+To demonstrate, we add the `app.css` file that will be bundled by Webpack. Style changes to `app.css` will be reflected on-the-fly thanks to the dev server's Hot Module Replacement.
 
-And for a bit of demonstration, we add the `app.css` file to demonstrate the idea of a local or
-module specific `css` file that is bundled and whom's changes will be reflected live
-when using the development server.
+#### Other Changes
+* Material Design Lite assets are brought into the `src` tree and bundle them into `main.js` instead of hardcoding them into `index.html`.
+* Our React code is moved into its own `app.jsx` file.
+
+
