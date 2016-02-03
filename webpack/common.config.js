@@ -21,6 +21,8 @@ module.exports = {
     publicPath: '/static/js/'
   },
 
+  // Loaders are processed from RIGHT to LEFT
+  // See https://webpack.github.io/docs/loaders.html
   module: {
     loaders: [{
       test: /\.css$/,
